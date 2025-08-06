@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment dikxz store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #38bdf8;
+    }
+    .card {
+      background: #1e293b;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 10px;
+      transition: all 0.3s ease-in-out;
+    }
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 10px #0ea5e9;
+    }
+    .card h3 {
+      margin: 0 0 10px;
+      color: #38bdf8;
+    }
+    .aktif {
+      color: #22c55e;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    .copy-btn {
+      float: right;
+      background: #0ea5e9;
+      border: none;
+      padding: 5px 10px;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .copy-btn:hover {
+      background: #0284c7;
+    }
+    .qris-img {
+      max-width: 250px;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-top: 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .qris-btn {
+      margin-top: 10px;
+      background: #22c55e;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .faq-section {
+      margin-top: 30px;
+    }
+    .faq-item {
+      background: #1e293b;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .faq-question {
+      padding: 15px;
+      cursor: pointer;
+      position: relative;
+    }
+    .faq-question::after {
+      content: '+';
+      position: absolute;
+      right: 20px;
+    }
+    .faq-question.active::after {
+      content: '-';
+    }
+    .faq-answer {
+      display: none;
+      padding: 0 15px 15px;
+      color: #cbd5e1;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 12px;
+      color: #64748b;
+    }
+    .audio-control {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    #play-btn {
+      padding: 8px 15px;
+      background-color: #38bdf8;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>KIRIM NOMINAL SESUAI YANG ANDA BELI</h1>
+ 
+    
+    <div style="text-align: center; margin: 40px 0;">
+      <img src="" alt="" style="max-width: 100px;">
+    </div>
+
+    <div class="card">
+      <h3>DANA <span class="aktif">Aktif</span></h3>
+      <p>083824930057 <button class="copy-btn" onclick="copyText('083824930057')">Salin</button></p>
+    </div>
+
+    <div class="card">
+      <h3>QRIS <span class="aktif">Aktif</span></h3>
+      <a href="https://files.catbox.moe/c1xv03.jpg" download>
+        <img class="qris-img" src="https://files.catbox.moe/c1xv03.jpg" alt="QRIS">
+      </a>
+      <button class="qris-btn" onclick="downloadQRIS()">Lihat QRIS</button>
+    </div>
+
+    <div class="card">
+      <h3>TELEGRAM <span class="aktif">Aktif</span></h3>
+      <p>KIRIM BUKTI DETAIL KE TELEGRAM <button class="copy-btn" onclick="copyText('https://t.me/dikxz_store')">Salin</button></p>
+    </div>
+
+    <div class="faq-section">
+      <h2>Pertanyaan Umum (FAQ)</h2>
+      <h3> HARUS DI BACA AGAR PAHAM </h3>
+
+      <div class="faq-item">
+        <div class="faq-question">Bagaimana cara melakukan pembayaran?</div>
+        <div class="faq-answer">Silakan pilih salah satu metode di atas, salin nomor tujuan, lalu lakukan transfer dari aplikasi pembayaran kamu.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Ke mana saya harus mengirim bukti pembayaran?</div>
+        <div class="faq-answer">Kirim bukti pembayaran ke admin melalui Telegram ( https://t.me/dikxz_store )  untuk konfirmasi transaksi Ga kirim Bukti tf Saldo Ga akan Masuk</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Berapa lama proses konfirmasi pembayaran?</div>
+        <div class="faq-answer">Proses konfirmasi biasanya memakan waktu 1–10 menit setelah bukti diterima.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Apakah ada biaya tambahan?</div>
+        <div class="faq-answer">Engga ada biaya tambahan kecuali ada ketentuan khusus dari metode tertentu.</div>
+      </div>
+    </div>
+
+    <div class="audio-control">
+      <button id="play-btn">▶ Play Music</button>
+    </div>
+
+    <footer>© 2025 DIKXZ STORE. Metode Pembayaran</footer>
+  </div>
+
+  <audio id="bg-music" loop>
+    <source src="https://files.catbox.moe/u7bj4z.mp4" type="audio/mpeg">
+    Browser kamu tidak support musik.
+  </audio>
+
+  <script>
+    function copyText(text) {
+      navigator.clipboard.writeText(text);
+      alert("Nomor disalin: " + text);
+    }
+
+    function downloadQRIS() {
+      const link = document.createElement('a');
+      link.href = "https://files.catbox.moe/c1xv03.jpg";
+      link.download = "qris.jpg";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(q => {
+      q.addEventListener('click', () => {
+        q.classList.toggle('active');
+        const answer = q.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+    const audio = document.getElementById('bg-music');
+    const playBtn = document.getElementById('play-btn');
+
+    function tryAutoPlay() {
+      audio.play().then(() => {
+        playBtn.style.display = "none";
+      }).catch(() => {
+        playBtn.style.display = "inline-block";
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', tryAutoPlay);
+
+    playBtn.addEventListener('click', () => {
+      audio.play();
+      playBtn.style.display = "none";
+    });
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        audio.pause();
+      } else {
+        audio.play().catch(() => {});
+      }
+    });
+
+    window.addEventListener('beforeunload', () => {
+      audio.pause();
+    });
+  </script>
+
+</body>
+</html>
